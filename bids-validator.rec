@@ -1,0 +1,17 @@
+# VALIDATOR from bids
+
+BootStrap: docker
+From: bids/validator:latest
+
+%runscript
+  exec /usr/local/bin/bids-validator
+
+%post
+    #------------------------------------------------------------------------------
+    # Create local binding points for our ICS-ACI
+    #------------------------------------------------------------------------------
+    mkdir -p /storage/home
+    mkdir -p /storage/work
+    mkdir -p /gpfs/scratch
+    mkdir -p /gpfs/group
+    mkdir -p /var/spool/torque
