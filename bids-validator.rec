@@ -4,7 +4,7 @@ BootStrap: docker
 From: bids/validator:latest
 
 %runscript
-  exec /usr/local/bin/bids-validator
+  exec /usr/local/bin/bids-validator "$@"
 
 %post
     #------------------------------------------------------------------------------
